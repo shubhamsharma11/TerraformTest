@@ -1,0 +1,11 @@
+- name: Reading a variable
+  hosts: web
+  vars_prompt:
+    name: my_cont
+    prompt: Enter any value !!!
+    private: false
+  
+  tasks:
+    - copy:
+        dest: $PWD/index.html
+        content: "{{ my_cont }}"

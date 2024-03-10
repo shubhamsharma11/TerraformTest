@@ -1,0 +1,11 @@
+---
+- name: create user
+  hosts: localhost
+  become: true
+  vars_files:
+  - secrets.yaml
+  tasks:
+    - name: adding users
+      user:
+        name: "{{ username }}"
+        password: "{{ password }}"

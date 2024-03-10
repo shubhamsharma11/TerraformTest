@@ -1,0 +1,17 @@
+---
+- hosts: localhost
+  name: To install apache
+  become: true
+  tasks:
+    - name: Install and configure Apache
+      block:
+        - name: install apache2
+          apt:
+            name: apache2
+            state: present
+ 
+        - name: Install and configure Apache
+          service:
+            name: apache2
+            state: started
+      when: ansible_os_family == "Debian"

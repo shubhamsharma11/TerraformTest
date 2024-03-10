@@ -1,0 +1,8 @@
+---
+- name: Install webserver
+  hosts: "{{ hostname }}"
+  #hosts: web-rocky1
+  tasks:
+    - yum:
+        name: "{{ package }}"
+        state: Present

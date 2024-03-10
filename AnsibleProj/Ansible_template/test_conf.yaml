@@ -1,0 +1,42 @@
+- name: Generate Nginx Configuration
+  hosts: localhost
+  become: true
+  vars:
+    nginx_port: 127.0.0.1:8088
+    server_name: shubham.com
+    nginx_root: /usr/share/nginx/html
+    nginx_usr: adminuser
+ 
+  tasks:
+    - name: Update apt cache
+      become: yes
+      apt:
+        update_cache: yes
+ 
+    - name: Install Nginx package
+      become: yes
+      apt:
+        name: nginx
+        state: present
+ 
+    - name: Start Nginx service
+      become: yes
+      service:
+        name: nginx
+        state: started
+        enabled: yes  # Ensure Nginx starts on boot
+      ignore_errors: yes
+ 
+    - name: Copy Nginx Configuration
+      template:
+        src: nginx.conf.j2
+        dest: /etc/nginx/nginx.conf
+      notify:
+        - Restart Nginx
+ 
+  handlers:
+  - name: Restart Nginx
+    become: yes
+    service:
+      name: nginx
+      state: restarted

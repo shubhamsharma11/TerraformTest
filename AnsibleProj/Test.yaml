@@ -1,0 +1,8 @@
+- hosts: all
+  vars:
+    my_cont: “this is test web server”
+ 
+  tasks:
+  - copy:
+      dest: $PWD/index.html
+      content: “{{ my_cont}}”

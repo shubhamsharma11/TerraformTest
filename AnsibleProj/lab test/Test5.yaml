@@ -1,0 +1,29 @@
+---
+- hosts: localhost
+  name: To install apache
+  become: true
+  tasks:
+    - name: Install and configure Apache
+      apt:
+        name: apache2
+        state: present
+      tags:
+      - webserver
+    - name: Install and configure Apache
+      service:
+        name: apache2
+        state: started
+      tags:
+      - webserver
+    - name: Install and configure Nginx
+      yum:
+        name: nginx
+        state: present
+      tags:
+      - proxyserver
+    - name: Install and configure Nginx
+      service:
+        name: nginx
+        state: present
+      tags:
+      - proxyserver

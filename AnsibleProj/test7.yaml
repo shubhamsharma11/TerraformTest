@@ -1,0 +1,32 @@
+---
+- hosts: your_target_server
+  become: true
+  tasks:
+    - name: Update apt cache
+      apt:
+        update_cache: yes
+ 
+    - name: Install Apache
+      apt:
+        name: apache2
+        state: present
+ 
+    - name: Install MySQL server
+      apt:
+        name: mysql-server
+        state: present
+      vars:
+        mysql_root_password: your_mysql_root_password
+ 
+    - name: Install PHP and required modules
+      apt:
+        name: "{{ item }}"
+        state: present
+        - php
+        - libapache2-mod-php
+        - php-mysql
+ 
+    - name: Restart Apache
+      service:
+        name: apache2
+        state: restarted

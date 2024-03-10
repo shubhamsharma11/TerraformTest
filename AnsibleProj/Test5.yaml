@@ -1,0 +1,10 @@
+---
+- name: print greeting
+  hosts: "*"
+  tasks:
+    - set_fact: name=Prod
+    - include_vars: "{{ var_file }}.yaml"
+    #- include_vars: filename.yml
+    - debug: msg="Hello, {{ company1.name }}!"
+    - debug: msg="Hello, {{ company2['name'] }}!"
+    - debug: msg="Hello, {{ name }}!"

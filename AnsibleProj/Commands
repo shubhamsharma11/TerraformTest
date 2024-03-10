@@ -1,0 +1,674 @@
+To run a command as administrator (user "root"), use "sudo <command>".
+See "man sudo_root" for details.
+
+testadmin@MasterAnsible:~$ ansible
+
+Command 'ansible' not found, but can be installed with:
+
+sudo apt install ansible
+
+testadmin@MasterAnsible:~$ sudo apt install ansible
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+E: Unable to locate package ansible
+testadmin@MasterAnsible:~$ sudo apt update
+Hit:1 http://azure.archive.ubuntu.com/ubuntu focal InRelease
+Get:2 http://azure.archive.ubuntu.com/ubuntu focal-updates InRelease [114 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu focal-backports InRelease [108 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu focal-security InRelease [114 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 Packages [8628 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu focal/universe Translation-en [5124 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 c-n-f Metadata [265 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu focal/multiverse amd64 Packages [144 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu focal/multiverse Translation-en [104 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu focal/multiverse amd64 c-n-f Metadata [9136 B]
+Get:11 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 Packages [3020 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu focal-updates/main Translation-en [488 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu focal-updates/restricted amd64 Packages [2569 kB]
+Get:14 http://azure.archive.ubuntu.com/ubuntu focal-updates/restricted Translation-en [359 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe amd64 Packages [1140 kB]
+Get:16 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe Translation-en [273 kB]
+Get:17 http://azure.archive.ubuntu.com/ubuntu focal-updates/universe amd64 c-n-f Metadata [25.7 kB]
+Get:18 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 Packages [25.8 kB]
+Get:19 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse Translation-en [7484 B]
+Get:20 http://azure.archive.ubuntu.com/ubuntu focal-updates/multiverse amd64 c-n-f Metadata [620 B]
+Get:21 http://azure.archive.ubuntu.com/ubuntu focal-backports/main amd64 Packages [45.7 kB]
+Get:22 http://azure.archive.ubuntu.com/ubuntu focal-backports/main Translation-en [16.3 kB]
+Get:23 http://azure.archive.ubuntu.com/ubuntu focal-backports/main amd64 c-n-f Metadata [1420 B]
+Get:24 http://azure.archive.ubuntu.com/ubuntu focal-backports/restricted amd64 c-n-f Metadata [116 B]
+Get:25 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe amd64 Packages [25.0 kB]
+Get:26 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe Translation-en [16.3 kB]
+Get:27 http://azure.archive.ubuntu.com/ubuntu focal-backports/universe amd64 c-n-f Metadata [880 B]
+Get:28 http://azure.archive.ubuntu.com/ubuntu focal-backports/multiverse amd64 c-n-f Metadata [116 B]
+Get:29 http://azure.archive.ubuntu.com/ubuntu focal-security/main amd64 Packages [2640 kB]
+Get:30 http://azure.archive.ubuntu.com/ubuntu focal-security/main Translation-en [405 kB]
+Get:31 http://azure.archive.ubuntu.com/ubuntu focal-security/restricted amd64 Packages [2451 kB]
+Get:32 http://azure.archive.ubuntu.com/ubuntu focal-security/restricted Translation-en [342 kB]
+Get:33 http://azure.archive.ubuntu.com/ubuntu focal-security/universe amd64 Packages [915 kB]
+Get:34 http://azure.archive.ubuntu.com/ubuntu focal-security/universe Translation-en [192 kB]
+Get:35 http://azure.archive.ubuntu.com/ubuntu focal-security/universe amd64 c-n-f Metadata [19.2 kB]
+Get:36 http://azure.archive.ubuntu.com/ubuntu focal-security/multiverse amd64 Packages [23.6 kB]
+Get:37 http://azure.archive.ubuntu.com/ubuntu focal-security/multiverse Translation-en [5504 B]
+Get:38 http://azure.archive.ubuntu.com/ubuntu focal-security/multiverse amd64 c-n-f Metadata [548 B]
+Fetched 29.6 MB in 6s (5303 kB/s)                          
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+3 packages can be upgraded. Run 'apt list --upgradable' to see them.
+testadmin@MasterAnsible:~$ sudo apt install ansible
+Reading package lists... Done
+Building dependency tree       
+Reading state information... Done
+The following additional packages will be installed:
+  ieee-data python3-argcomplete python3-crypto python3-dnspython python3-jmespath python3-kerberos python3-libcloud python3-lockfile python3-netaddr python3-ntlm-auth python3-requests-kerberos
+  python3-requests-ntlm python3-selinux python3-winrm python3-xmltodict
+Suggested packages:
+  cowsay sshpass python-lockfile-doc ipython3 python-netaddr-docs
+The following NEW packages will be installed:
+  ansible ieee-data python3-argcomplete python3-crypto python3-dnspython python3-jmespath python3-kerberos python3-libcloud python3-lockfile python3-netaddr python3-ntlm-auth python3-requests-kerberos
+  python3-requests-ntlm python3-selinux python3-winrm python3-xmltodict
+0 upgraded, 16 newly installed, 0 to remove and 3 not upgraded.
+Need to get 9644 kB of archives.
+After this operation, 90.2 MB of additional disk space will be used.
+Do you want to continue? [Y/n] y
+Get:1 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 python3-crypto amd64 2.6.1-13ubuntu2 [237 kB]
+Get:2 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-dnspython all 1.16.0-1ubuntu1 [89.2 kB]
+Get:3 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 ieee-data all 20180805.1 [1589 kB]
+Get:4 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-netaddr all 0.7.19-3ubuntu1 [236 kB]
+Get:5 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 ansible all 2.9.6+dfsg-1 [5794 kB]
+Get:6 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-argcomplete all 1.8.1-1.3ubuntu1 [27.2 kB]
+Get:7 http://azure.archive.ubuntu.com/ubuntu focal-updates/main amd64 python3-jmespath all 0.9.4-2ubuntu1 [21.5 kB]
+Get:8 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-kerberos amd64 1.1.14-3.1build1 [22.6 kB]
+Get:9 http://azure.archive.ubuntu.com/ubuntu focal/main amd64 python3-lockfile all 1:0.12.2-2ubuntu2 [14.6 kB]
+Get:10 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-libcloud all 2.8.0-1 [1403 kB]
+Get:11 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-ntlm-auth all 1.1.0-1 [19.6 kB]
+Get:12 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-requests-kerberos all 0.12.0-2 [11.9 kB]
+Get:13 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-requests-ntlm all 1.1.0-1 [6004 B]
+Get:14 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-selinux amd64 3.0-1build2 [139 kB]
+Get:15 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-xmltodict all 0.12.0-1 [12.6 kB]
+Get:16 http://azure.archive.ubuntu.com/ubuntu focal/universe amd64 python3-winrm all 0.3.0-2 [21.7 kB]
+Fetched 9644 kB in 0s (59.3 MB/s)    
+debconf: unable to initialize frontend: Dialog
+debconf: (Dialog frontend requires a screen at least 13 lines tall and 31 columns wide.)
+debconf: falling back to frontend: Readline
+Selecting previously unselected package python3-crypto.
+(Reading database ... 58930 files and directories currently installed.)
+Preparing to unpack .../00-python3-crypto_2.6.1-13ubuntu2_amd64.deb ...
+Unpacking python3-crypto (2.6.1-13ubuntu2) ...
+Selecting previously unselected package python3-dnspython.
+Preparing to unpack .../01-python3-dnspython_1.16.0-1ubuntu1_all.deb ...
+Unpacking python3-dnspython (1.16.0-1ubuntu1) ...
+Selecting previously unselected package ieee-data.
+Preparing to unpack .../02-ieee-data_20180805.1_all.deb ...
+Unpacking ieee-data (20180805.1) ...
+Selecting previously unselected package python3-netaddr.
+Preparing to unpack .../03-python3-netaddr_0.7.19-3ubuntu1_all.deb ...
+Unpacking python3-netaddr (0.7.19-3ubuntu1) ...
+Selecting previously unselected package ansible.
+Preparing to unpack .../04-ansible_2.9.6+dfsg-1_all.deb ...
+Unpacking ansible (2.9.6+dfsg-1) ...
+Selecting previously unselected package python3-argcomplete.
+Preparing to unpack .../05-python3-argcomplete_1.8.1-1.3ubuntu1_all.deb ...
+Unpacking python3-argcomplete (1.8.1-1.3ubuntu1) ...
+Selecting previously unselected package python3-jmespath.
+Preparing to unpack .../06-python3-jmespath_0.9.4-2ubuntu1_all.deb ...
+Unpacking python3-jmespath (0.9.4-2ubuntu1) ...
+Selecting previously unselected package python3-kerberos.
+Preparing to unpack .../07-python3-kerberos_1.1.14-3.1build1_amd64.deb ...
+Unpacking python3-kerberos (1.1.14-3.1build1) ...
+Selecting previously unselected package python3-lockfile.
+Preparing to unpack .../08-python3-lockfile_1%3a0.12.2-2ubuntu2_all.deb ...
+Unpacking python3-lockfile (1:0.12.2-2ubuntu2) ...
+Selecting previously unselected package python3-libcloud.
+Preparing to unpack .../09-python3-libcloud_2.8.0-1_all.deb ...
+Unpacking python3-libcloud (2.8.0-1) ...
+Selecting previously unselected package python3-ntlm-auth.
+Preparing to unpack .../10-python3-ntlm-auth_1.1.0-1_all.deb ...
+Unpacking python3-ntlm-auth (1.1.0-1) ...
+Selecting previously unselected package python3-requests-kerberos.
+Preparing to unpack .../11-python3-requests-kerberos_0.12.0-2_all.deb ...
+Unpacking python3-requests-kerberos (0.12.0-2) ...
+Selecting previously unselected package python3-requests-ntlm.
+Preparing to unpack .../12-python3-requests-ntlm_1.1.0-1_all.deb ...
+Unpacking python3-requests-ntlm (1.1.0-1) ...
+Selecting previously unselected package python3-selinux.
+Preparing to unpack .../13-python3-selinux_3.0-1build2_amd64.deb ...
+Unpacking python3-selinux (3.0-1build2) ...
+Selecting previously unselected package python3-xmltodict.
+Preparing to unpack .../14-python3-xmltodict_0.12.0-1_all.deb ...
+Unpacking python3-xmltodict (0.12.0-1) ...
+Selecting previously unselected package python3-winrm.
+Preparing to unpack .../15-python3-winrm_0.3.0-2_all.deb ...
+Unpacking python3-winrm (0.3.0-2) ...
+Setting up python3-lockfile (1:0.12.2-2ubuntu2) ...
+Setting up python3-ntlm-auth (1.1.0-1) ...
+Setting up python3-kerberos (1.1.14-3.1build1) ...
+Setting up python3-xmltodict (0.12.0-1) ...
+Setting up python3-jmespath (0.9.4-2ubuntu1) ...
+Setting up python3-requests-kerberos (0.12.0-2) ...
+Setting up ieee-data (20180805.1) ...
+Setting up python3-dnspython (1.16.0-1ubuntu1) ...
+Setting up python3-selinux (3.0-1build2) ...
+Setting up python3-crypto (2.6.1-13ubuntu2) ...
+Setting up python3-argcomplete (1.8.1-1.3ubuntu1) ...
+Setting up python3-requests-ntlm (1.1.0-1) ...
+Setting up python3-libcloud (2.8.0-1) ...
+Setting up python3-netaddr (0.7.19-3ubuntu1) ...
+Setting up python3-winrm (0.3.0-2) ...
+Setting up ansible (2.9.6+dfsg-1) ...
+Processing triggers for man-db (2.9.1-1) ...
+testadmin@MasterAnsible:~$ ansible
+usage: ansible [-h] [--version] [-v] [-b] [--become-method BECOME_METHOD] [--become-user BECOME_USER] [-K] [-i INVENTORY] [--list-hosts] [-l SUBSET] [-P POLL_INTERVAL] [-B SECONDS] [-o] [-t TREE] [-k]
+               [--private-key PRIVATE_KEY_FILE] [-u REMOTE_USER] [-c CONNECTION] [-T TIMEOUT] [--ssh-common-args SSH_COMMON_ARGS] [--sftp-extra-args SFTP_EXTRA_ARGS] [--scp-extra-args SCP_EXTRA_ARGS]
+               [--ssh-extra-args SSH_EXTRA_ARGS] [-C] [--syntax-check] [-D] [-e EXTRA_VARS] [--vault-id VAULT_IDS] [--ask-vault-pass | --vault-password-file VAULT_PASSWORD_FILES] [-f FORKS]
+               [-M MODULE_PATH] [--playbook-dir BASEDIR] [-a MODULE_ARGS] [-m MODULE_NAME]
+               pattern
+ansible: error: the following arguments are required: pattern
+testadmin@MasterAnsible:~$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/home/testadmin/.ssh/id_rsa): 
+Enter passphrase (empty for no passphrase): 
+Enter same passphrase again: 
+Your identification has been saved in /home/testadmin/.ssh/id_rsa
+Your public key has been saved in /home/testadmin/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:8MNi8tBuBA+u0OStyzFjYzHYJkTGPguQ2xiBQvuz0lg testadmin@MasterAnsible
+The key's randomart image is:
++---[RSA 3072]----+
+|=*               |
+|O..              |
+|+B. o .          |
+|=Ooo = +         |
+|= XE= * S        |
+| =+=oB . .       |
+| oXo  +          |
+| +.* .           |
+|  o              |
++----[SHA256]-----+
+testadmin@MasterAnsible:~$ cd /.ssh
+bash: cd: /.ssh: No such file or directory
+testadmin@MasterAnsible:~$ cd $PWD/.ssh
+testadmin@MasterAnsible:~/.ssh$ cat id_rsa.pub >> authorized_keys 
+testadmin@MasterAnsible:~/.ssh$ cat id_rsa.pub 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDpoj2TMMaJlkcOmukEnqojT0sUHKirR/csGWxr/TsMeXT46vxuTlJQnDcOFnV2uLdHgbpEKJBBl62bPMZsCyI8zFD7G4gs/XdPPAkx/CzWa0wqV4D0e6Qse11SoFnYtx/15f+brrb7HWyqdEhLSqPSSqe0dpvP+Sm5wvbhyunmU4tkI5OntrO47HCAyjuiV1hoxGpjghLAhQ06CqhnWFyzl3n4CBv3htCPqv0di5xafIIvdFi86r782jvhujYOKeiw0C7BWz6A2Q7gqL1wXeLUSLLFl4ekRpWAWbIxD8vZYBe3ejxGfgzpHGHh+MZiarUI2VwZXpvygYCTteUlMDiTCsCOJIXjfLi7ddXKRFOPtIGmeTLKAQbLYtfh0kv2yutqjLKdCzaNh5n3fJrEbHzXJvj2CVZ/CoFG9YTXeuAwzqCwG4F2ebmWtamstR6FYB6dwDzw5J5LqDiCnpbkFjTbHR6euKIRyTuBOd7Egmf/GllazKIAHwuLAw85eTimEP0= testadmin@MasterAnsible
+testadmin@MasterAnsible:~/.ssh$ cat authorized_keys 
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDpoj2TMMaJlkcOmukEnqojT0sUHKirR/csGWxr/TsMeXT46vxuTlJQnDcOFnV2uLdHgbpEKJBBl62bPMZsCyI8zFD7G4gs/XdPPAkx/CzWa0wqV4D0e6Qse11SoFnYtx/15f+brrb7HWyqdEhLSqPSSqe0dpvP+Sm5wvbhyunmU4tkI5OntrO47HCAyjuiV1hoxGpjghLAhQ06CqhnWFyzl3n4CBv3htCPqv0di5xafIIvdFi86r782jvhujYOKeiw0C7BWz6A2Q7gqL1wXeLUSLLFl4ekRpWAWbIxD8vZYBe3ejxGfgzpHGHh+MZiarUI2VwZXpvygYCTteUlMDiTCsCOJIXjfLi7ddXKRFOPtIGmeTLKAQbLYtfh0kv2yutqjLKdCzaNh5n3fJrEbHzXJvj2CVZ/CoFG9YTXeuAwzqCwG4F2ebmWtamstR6FYB6dwDzw5J5LqDiCnpbkFjTbHR6euKIRyTuBOd7Egmf/GllazKIAHwuLAw85eTimEP0= testadmin@MasterAnsible
+testadmin@MasterAnsible:~/.ssh$ cd ..
+testadmin@MasterAnsible:~$ touch inventory
+testadmin@MasterAnsible:~$ cat inventory 
+[web]
+10.0.0.4
+
+[db]
+10.0.0.5testadmin@MasterAnsible:~$ 
+testadmin@MasterAnsible:~$ md AnsibleProjects
+md: command not found
+testadmin@MasterAnsible:~$ dir AnsibleProjects
+dir: cannot access 'AnsibleProjects': No such file or directory
+testadmin@MasterAnsible:~$ mkdir AnsibleProjects
+testadmin@MasterAnsible:~$ cd AnsibleProjects/
+testadmin@MasterAnsible:~/AnsibleProjects$ cd ..
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test.yaml
+
+PLAY [web] **********************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+The authenticity of host '10.0.0.4 (10.0.0.4)' can't be established.
+ECDSA key fingerprint is SHA256:bceh3Y2jYBbkCu6Q6mjJ6vsPzGhhg8X2Z5EmkDfB/eA.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+ok: [10.0.0.4]
+
+TASK [copy] *********************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"changed": false, "checksum": "919d9656756bb82ea4c8f0e44a1bb0ea6176ae19", "msg": "Destination directory /var/www/html does not exist"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test.yaml
+[WARNING]: Could not match supplied host pattern, ignoring: web
+
+PLAY [web] **********************************************************************************************************************************************************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test.yaml
+[WARNING]: Could not match supplied host pattern, ignoring: web
+
+PLAY [web] **********************************************************************************************************************************************************************************************************************
+skipping: no hosts matched
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test.yaml
+
+PLAY [web] **********************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [copy] *********************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"changed": false, "checksum": "919d9656756bb82ea4c8f0e44a1bb0ea6176ae19", "msg": "Destination directory /var/www/html does not exist"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test.yaml
+
+PLAY [web] **********************************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [copy] *********************************************************************************************************************************************************************************************************************
+changed: [10.0.0.4]
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test2.yaml
+ERROR! 'Name' is not a valid attribute for a Play
+
+The error appears to be in '//home/testadmin/AnsibleProjects/Test2.yaml': line 1, column 3, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+
+- Name: Reading a variable
+  ^ here
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test2.yaml
+Enter any value !!!: hello world, how are you
+
+PLAY [Reading a variable] *******************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [copy] *********************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'my_cont' is undefined\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test2.yaml': line 9, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - copy:\n      ^ here\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test2.yaml
+Enter any value !!!: Hello World, how are you!!!
+
+PLAY [Reading a variable] *******************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [copy] *********************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'my_cont' is undefined\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test2.yaml': line 9, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - copy:\n      ^ here\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test2.yaml
+Enter any value !!!: Hello world, how are you !!!
+
+PLAY [Reading a variable] *******************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [copy] *********************************************************************************************************************************************************************************************************************
+changed: [10.0.0.4]
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=2    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test3.yaml
+
+PLAY [pass variable using cli] **************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'var11' is undefined\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test3.yaml': line 6, column 6, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n   - debug: msg=\"Hello, {{ var1 }}!\"\n     ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test3.yaml -e "var11=Hello World"
+
+PLAY [pass variable using cli] **************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Hello!"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=2    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'vars/name_vars.yml'\nSearched in:\n\t//home/testadmin/AnsibleProjects/vars/vars/name_vars.yml\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yml\n\t//home/testadmin/AnsibleProjects/vars/vars/name_vars.yml\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yml on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'vars/name_vars.yml'\nSearched in:\n\t//home/testadmin/AnsibleProjects/vars/vars/name_vars.yml\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yml\n\t//home/testadmin/AnsibleProjects/vars/vars/name_vars.yml\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yml on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access '/$PWD/vars/name_vars.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access '/vars/name_vars.yml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access '/vars/name_vars.yaml' on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access '$PWD/vars/name_vars.yaml'\nSearched in:\n\t//home/testadmin/AnsibleProjects/vars/$PWD/vars/name_vars.yaml\n\t//home/testadmin/AnsibleProjects/$PWD/vars/name_vars.yaml\n\t//home/testadmin/AnsibleProjects/vars/$PWD/vars/name_vars.yaml\n\t//home/testadmin/AnsibleProjects/$PWD/vars/name_vars.yaml on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Everyone!"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test4.yaml -e "var_file=name_vars.yaml"
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Everyone!"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test6.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [set_fact] *****************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'company_vars' is undefined\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test6.yaml': line 5, column 21, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    - set_fact: name=Prod\n                    ^ here\n\nThere appears to be both 'k=v' shorthand syntax and YAML in this task. Only one syntax may be used.\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test5.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'var_file' is undefined\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test5.yaml': line 4, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n  tasks:\n    - include_vars: vars/{{ var_file }}.yaml\n      ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test5.yaml -e "var_file=name_vars.yaml"
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'vars/name_vars.yaml.yaml'\nSearched in:\n\t//home/testadmin/AnsibleProjects/vars/vars/name_vars.yaml.yaml\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yaml.yaml\n\t//home/testadmin/AnsibleProjects/vars/vars/name_vars.yaml.yaml\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yaml.yaml on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test5.yaml -e "var_file=name_vars.yaml"
+ERROR! Syntax Error while loading YAML.
+  did not find expected key
+
+The error appears to be in '//home/testadmin/AnsibleProjects/Test5.yaml': line 4, column 35, but may
+be elsewhere in the file depending on the exact syntax problem.
+
+The offending line appears to be:
+
+  tasks:
+    - include_vars: {{ var_file }}.yaml
+                                  ^ here
+We could be wrong, but this one looks like it might be an issue with
+missing quotes. Always quote template expression brackets when they
+start a value. For instance:
+
+    with_items:
+      - {{ foo }}
+
+Should be written as:
+
+    with_items:
+      - "{{ foo }}"
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test5.yaml -e "var_file=name_vars.yaml"
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"ansible_facts": {}, "ansible_included_var_files": [], "changed": false, "message": "Could not find or access 'name_vars.yaml.yaml'\nSearched in:\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yaml.yaml\n\t//home/testadmin/AnsibleProjects/name_vars.yaml.yaml\n\t//home/testadmin/AnsibleProjects/vars/name_vars.yaml.yaml\n\t//home/testadmin/AnsibleProjects/name_vars.yaml.yaml on the Ansible Controller.\nIf you are using a module and expect the file to exist on the remote, see the remote_src option"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=1    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test5.yaml -e "var_file=name_vars"
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Everyone!"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test6.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [set_fact] *****************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'company_vars' is undefined\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test6.yaml': line 5, column 21, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    - set_fact: name=Prod\n                    ^ here\n\nThere appears to be both 'k=v' shorthand syntax and YAML in this task. Only one syntax may be used.\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test6.yaml
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [set_fact] *****************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'company_vars' is undefined\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test6.yaml': line 5, column 21, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    - set_fact: name=Prod\n                    ^ here\n\nThere appears to be both 'k=v' shorthand syntax and YAML in this task. Only one syntax may be used.\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=2    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test6.yaml -e "var_file=company_vars"
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [set_fact] *****************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Development!"
+}
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Prod!"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=5    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test6.yaml -e "var_file=company_vars"
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [set_fact] *****************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Development!"
+}
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+fatal: [10.0.0.4]: FAILED! => {"msg": "The task includes an option with an undefined variable. The error was: 'dict object' has no attribute 'Prod'\n\nThe error appears to be in '//home/testadmin/AnsibleProjects/Test6.yaml': line 9, column 7, but may\nbe elsewhere in the file depending on the exact syntax problem.\n\nThe offending line appears to be:\n\n    - debug: msg=\"Hello, {{ company1.name }}!\"\n    - debug: msg=\"Hello, {{ company2[name] }}!\"\n      ^ here\nWe could be wrong, but this one looks like it might be an issue with\nmissing quotes. Always quote template expression brackets when they\nstart a value. For instance:\n\n    with_items:\n      - {{ foo }}\n\nShould be written as:\n\n    with_items:\n      - \"{{ foo }}\"\n"}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=4    changed=0    unreachable=0    failed=1    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ ansible-playbook -i inventory /$PWD/AnsibleProjects/Test6.yaml -e "var_file=company_vars"
+
+PLAY [print greeting] ***********************************************************************************************************************************************************************************************************
+
+TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [set_fact] *****************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [include_vars] *************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4]
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Development!"
+}
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Dev!"
+}
+
+TASK [debug] ********************************************************************************************************************************************************************************************************************
+ok: [10.0.0.4] => {
+    "msg": "Hello, Prod!"
+}
+
+PLAY RECAP **********************************************************************************************************************************************************************************************************************
+10.0.0.4                   : ok=6    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+
+testadmin@MasterAnsible:~$ 

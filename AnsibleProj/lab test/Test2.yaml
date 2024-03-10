@@ -1,0 +1,13 @@
+---
+- hosts: web
+  name: To Create 3 Folders
+  become: true
+  tasks:
+    - name: Create folders
+      file:
+        path: $PWD/{{ item }}
+        state: directory
+      with_items:
+        - fold1
+        - fold2
+        - fold3

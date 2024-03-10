@@ -1,0 +1,6 @@
+- name: pass variable using cli
+  hosts: web
+  vars:
+    var1: "{{ var11 }}"
+  tasks:
+   - debug: msg="Hello, {{ var1 }}!"

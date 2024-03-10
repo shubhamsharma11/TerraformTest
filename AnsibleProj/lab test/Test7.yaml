@@ -1,0 +1,15 @@
+---
+- name: Example Playbook with Handlers
+  hosts: localhost
+  become: yes
+  tasks:
+    - name: Ensure config file is present
+      copy:
+        src: setup-dump.json
+        dest: /root/setup-dump.json
+      notify: Restart Service
+ 
+  handlers:
+    - name: Restart Service
+      debug:
+        msg: echo "executed"

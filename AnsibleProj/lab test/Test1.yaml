@@ -1,0 +1,11 @@
+---
+- hosts: localhost
+  name: To Create 3 Folders
+  become: true
+  tasks:
+  - name: create folder
+    command: mkdir /root/"{{ item }}"
+    with_items:
+    - fold7
+    - fold10
+    - fold11
