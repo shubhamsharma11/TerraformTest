@@ -1,0 +1,209 @@
+name: Install Terraform on agent
+trigger:
+  - UAT
+
+parameters:
+- name: createdestroy
+  type: string 
+  default: 'apply'
+
+- name: poolname
+  type: string 
+  default: 'Azure Pipelines'
+
+- name: clients_id
+  type: string 
+  default: 'e0051092-9c36-465b-97ec-71f173494a02'
+
+- name: clients_secret
+  type: string
+
+resources:
+- repo: self
+
+variables:
+  imageRepo: 'k8spythonapp'
+  tag: 'v1'
+
+stages:
+- stage: INstall_Terraform  
+  jobs:
+  - job: INstall_Terraform 
+    displayName: Agent job 1
+    pool:
+      #name: Azure Pipelines
+      name: ${{ parameters.poolname }}
+    steps:
+    - script: |
+        if command -v terraform &> /dev/null; then
+          echo "Terraform is installed"
+        else
+          sudo apt update -y
+          sudo apt install unzip -y 
+          sudo apt-get update && sudo apt-get install -y gnupg software-properties-common -y
+          wget -O- https://apt.releases.hashicorp.com/gpg | gpg --dearmor | sudo tee /usr/share/keyrings/hashicorp-archive-keyring.gpg
+          gpg --no-default-keyring --keyring /usr/share/keyrings/hashicorp-archive-keyring.gpg --fingerprint
+          echo "deb [signed-by=/usr/share/keyrings/hashicorp-archive-keyring.gpg] https://apt.releases.hashicorp.com $(lsb_release -cs) main" | sudo tee /etc/apt/sources.list.d/hashicorp.list
+          sudo apt update -y
+          sudo apt-get install terraform -y
+        fi
+      displayName: 'Command Line Script'
+    - script: |
+        if command -v docker-compose &> /dev/null; then
+          echo "docker-compose is installed"
+        else
+          sudo curl -L "https://github.com/docker/compose/releases/download/v2.24.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          sudo chmod +x /usr/local/bin/docker-compose
+        fi
+      displayName: 'Command Line Script'
+
+- stage: Validate_Terraform
+  jobs:
+  - job: Validate_Terraform
+    displayName: Agent job 3
+    pool:
+      #name: Azure Pipelines
+      name: ${{ parameters.poolname }}
+    steps:
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+      displayName: Init
+      inputs:
+        workingDirectory: '$(Build.SourcesDirectory)/terraform/'
+        backendServiceArm: 'az-devops-sp-vishwa'
+        backendAzureRmResourceGroupName: 'rg01'
+        backendAzureRmStorageAccountName: cts2024devopsvishwa
+        backendAzureRmContainerName: teamcontainer
+        backendAzureRmKey: vishwa-uat.tfstate
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+      displayName: validate
+      inputs:
+        command: validate
+        workingDirectory: '$(Build.SourcesDirectory)/terraform/'
+        environmentServiceNameAzureRM: 'az-devops-sp-vishwa'
+
+- stage: Apply_Terraform
+  dependsOn: Validate_Terraform
+
+  jobs:
+  - job: Plan_Apply_Terraform 
+    
+    displayName: Agent job 4
+    #timeoutInMinutes: 5
+    pool:
+      #name: Azure Pipelines
+      name: ${{ parameters.poolname }}    
+    steps:
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+      displayName: Init
+      inputs:
+        workingDirectory: '$(Build.SourcesDirectory)/terraform/'
+        backendServiceArm: 'az-devops-sp-vishwa'
+        backendAzureRmResourceGroupName: 'rg01'
+        backendAzureRmStorageAccountName: cts2024devopsvishwa
+        backendAzureRmContainerName: teamcontainer
+        backendAzureRmKey: vishwa-uat.tfstate
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+      displayName: Plan
+      inputs:
+        workingDirectory: '$(Build.SourcesDirectory)/terraform/'
+        command: plan
+        commandOptions: '-var client_id=${{ parameters.clients_id }}  -var client_secret=${{ parameters.clients_secret }}'
+        environmentServiceNameAzureRM: 'az-devops-sp-vishwa'
+
+    - task: ms-devlabs.custom-terraform-tasks.custom-terraform-release-task.TerraformTaskV4@4
+      displayName: Apply Or Destroy
+      inputs:
+        workingDirectory: '$(Build.SourcesDirectory)/terraform/'
+        command: ${{ parameters.createdestroy }}
+        commandOptions: '-var client_id=${{ parameters.clients_id }}  -var client_secret=${{ parameters.clients_secret }}'
+        environmentServiceNameAzureRM: 'az-devops-sp-vishwa'
+        
+- stage: Build_Image
+  dependsOn: Apply_Terraform
+  jobs:
+  - job: Build_Image
+    displayName: Build_Image
+    pool:
+      name: ${{ parameters.poolname }} 
+    steps:
+    - task: Docker@2
+      inputs:
+        containerRegistry: 'acr-login'
+        repository: '$(imageRepo)'
+        command: 'buildAndPush'
+        Dockerfile: '$(Build.SourcesDirectory)/app/Dockerfile'
+        tags: |
+          $(Build.BuildId)
+          $(tag)
+    - task: PublishPipelineArtifact@1
+      inputs:
+        targetPath: '$(Pipeline.Workspace)/s/k8s-manifests'
+        artifact: 'manifest'
+        publishLocation: 'pipeline'
+
+- stage: Artifacts
+  dependsOn: Build_Image
+  jobs:
+  - job: UploadArtifacts
+    displayName: Artifacts
+    pool:
+      #name: Azure Pipelines
+      name: ${{ parameters.poolname }}  
+    steps:
+    - script: |
+        # Install JFrog CLI
+        curl -fL https://getcli.jfrog.io | sh
+        sudo cp jfrog /usr/local//bin
+      displayName: 'Install JFrog CLI'
+
+    - script: |
+        # Configure JFrog CLI with Artifactory server details
+        sudo jfrog rt config --url=https://stackroute.jfrog.io/artifactory --user=trialadmin --password=Reset123
+      displayName: 'Configure JFrog CLI'
+
+    - script: |
+        # Publish manifest file to Artifactory
+        sudo jfrog rt upload /home/azureuser/_work/1/s/k8s-manifests/*.yml k8s-yaml-generic-local/k8s-manifects/
+      displayName: 'Publish Manifest File to Artifactory'
+
+- stage: Deploy
+  dependsOn: Build_Image
+  jobs:
+  - job: DeployToAKS
+    displayName: Build_Image
+    pool:
+      #name: Azure Pipelines
+      name: ${{ parameters.poolname }}   
+    steps:
+    - task: KubernetesManifest@1
+      inputs:
+        action: 'createSecret'
+        connectionType: 'azureResourceManager'
+        azureSubscriptionConnection: 'az-devops-sp-vishwa'
+        azureResourceGroup: 'aks-vishwa01'
+        kubernetesCluster: 'myAKSCluster01'
+        secretType: 'dockerRegistry'
+        secretName: 'acr-secrets1'
+        dockerRegistryEndpoint: 'acr-login'
+    - task: DownloadPipelineArtifact@2
+      inputs:
+        buildType: 'current'
+        artifactName: 'manifest'
+        targetPath: '$(Pipeline.Workspace)/'
+    - task: RegExMatchReplace@2
+      displayName: 'RegEx Match & Replace'
+      inputs:
+        PathToFile: $(Pipeline.Workspace)/deploy-prod.yml
+        RegEx: 'image: kuberepoctsvishwa2024.azurecr.io/k8spythonapp:[a-zA-Z]+[0-9]+'
+        ValueToReplace: 'image: kuberepoctsvishwa2024.azurecr.io/k8spythonapp:$(Build.BuildId)'
+    - task: KubernetesManifest@1
+      inputs:
+        action: 'deploy'
+        connectionType: 'azureResourceManager'
+        azureSubscriptionConnection: 'az-devops-sp-vishwa'
+        azureResourceGroup: 'aks-vishwa01'
+        kubernetesCluster: 'myAKSCluster01'
+        manifests: |
+          $(Pipeline.Workspace)/deploy-prod.yml
+          $(Pipeline.Workspace)/service.yml
+        imagePullSecrets: 'acr-secrets1'

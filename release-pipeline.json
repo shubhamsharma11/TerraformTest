@@ -1,0 +1,68 @@
+{
+    "jobs": [
+      {
+        "deployment": {
+          "displayName": "DeployToAKS",
+          "pool": {
+            "vmImage": "ubuntu-latest"
+          },
+          "environment": "YourEnvironmentName",
+          "strategy": {
+            "runOnce": {
+              "deploy": {
+                "steps": [
+                  {
+                    "task": "KubernetesManifest@1",
+                    "inputs": {
+                      "action": "createSecret",
+                      "connectionType": "azureResourceManager",
+                      "azureSubscriptionConnection": "az-devops-sp-vishwa",
+                      "azureResourceGroup": "aks-vishwa01",
+                      "kubernetesCluster": "myAKSCluster01",
+                      "secretType": "dockerRegistry",
+                      "secretName": "acr-secrets1",
+                      "dockerRegistryEndpoint": "acr-login"
+                    }
+                  },
+                  {
+                    "task": "DownloadPipelineArtifact@2",
+                    "inputs": {
+                      "buildType": "current",
+                      "artifactName": "manifest",
+                      "targetPath": "$(Pipeline.Workspace)/"
+                    }
+                  },
+                  {
+                    "script": "curl -uvishwanath@vishwacloudlab.com:Reset123 -L -O \"https://stackroute.jfrog.io/artifactory/k8s-yaml-generic-local/k8s-manifests/*\"",
+                    "displayName": "Download Artifacts"
+                  },
+                  {
+                    "task": "RegExMatchReplace@2",
+                    "displayName": "RegEx Match & Replace",
+                    "inputs": {
+                      "PathToFile": "$(Pipeline.Workspace)/deploy-prod.yml",
+                      "RegEx": "image: kuberepoctsvishwa2024.azurecr.io/k8spythonapp:[a-zA-Z0-9]+",
+                      "ValueToReplace": "image: kuberepoctsvishwa2024.azurecr.io/k8spythonapp:$(Build.BuildId)"
+                    }
+                  },
+                  {
+                    "task": "KubernetesManifest@1",
+                    "inputs": {
+                      "action": "deploy",
+                      "connectionType": "azureResourceManager",
+                      "azureSubscriptionConnection": "az-devops-sp-vishwa",
+                      "azureResourceGroup": "aks-vishwa01",
+                      "kubernetesCluster": "myAKSCluster01",
+                      "manifests": "$(Pipeline.Workspace)/deploy-prod.yml\n$(Pipeline.Workspace)/service.yml",
+                      "imagePullSecrets": "acr-secrets1"
+                    }
+                  }
+                ]
+              }
+            }
+          }
+        }
+      }
+    ]
+  }
+  
