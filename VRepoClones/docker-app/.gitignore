@@ -1,0 +1,6 @@
+.terraform*
+.terraform.*
+*.backup
+Terraform-code/.terraform*
+Terraform-code/.terraform.*
+Terraform-code/*.backup

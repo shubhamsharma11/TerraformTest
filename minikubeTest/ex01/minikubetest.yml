@@ -1,0 +1,11 @@
+minikube
+minikube start
+kubectl get pods
+kubectl get pods -A
+kubectl get pods -n ns01
+kubectl get svc -n ns01
+kubectl delete -f ex01/service.yml -n ns01
+kubectl apply -f ex01/service2.yml -n ns01
+kubectl get svc -n ns01
+kubectl get pod -n ns01
+kubectl exec -it nginx-deployment-77c45bfd8-67kkl -n ns01 -- nslookup

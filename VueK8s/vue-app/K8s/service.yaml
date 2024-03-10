@@ -1,0 +1,23 @@
+# This file is for cluster IP
+apiVersion: v1
+kind: Service
+metadata:
+  name: vueapp-service
+  labels:
+    env: sandbox
+spec:
+  type: LoadBalancer
+  #type: NodePort
+  ports:
+   - protocol: TCP
+     port: 80  # service port 
+     targetPort: 80  # pod port = container port
+     nodePort: 30001 # external ip of the minikube node
+  # annotations:
+  #   service.alpha.kubernetes.io/cors-allowed-origins: "*"
+  #   service.alpha.kubernetes.io/cors-allowed-methods: "GET,POST,PUT,DELETE,OPTIONS"
+  #   service.alpha.kubernetes.io/cors-allowed-headers: "Content-Type,Authorization"
+  selector:
+    env: sandbox
+
+    

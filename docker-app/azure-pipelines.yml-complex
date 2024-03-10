@@ -1,0 +1,40 @@
+name: $(date:yyyyMMdd)$(rev:.r)
+trigger:
+  - Test-CodeSecurity
+jobs:
+- job: Job_1
+  displayName: Agent job 1
+  pool:
+    name: UAT
+  steps:
+  - checkout: self
+    fetchDepth: 1
+  - task: Docker@0
+    displayName: Build an image
+    inputs:
+      containerregistrytype: Container Registry
+      dockerRegistryEndpoint: 42c4f04f-b7ec-48ce-9399-be98a3d27877
+      azureSubscriptionEndpoint: 636b5d2b-6139-46d9-9ff7-609ae1eff71b
+      azureContainerRegistry: '{"loginServer":"kuberepoctsvishwa2024.azurecr.io", "id" : "/subscriptions/4f27598e-0d8b-448c-bc79-389fa0e915b6/resourceGroups/rg-kube/providers/Microsoft.ContainerRegistry/registries/kuberepoctsvishwa2024"}'
+      imageName: kuberepoctsvishwa2024:$(Build.BuildId)
+  - task: Docker@0
+    displayName: Push an image
+    inputs:
+      containerregistrytype: Container Registry
+      dockerRegistryEndpoint: 42c4f04f-b7ec-48ce-9399-be98a3d27877
+      azureSubscriptionEndpoint: 636b5d2b-6139-46d9-9ff7-609ae1eff71b
+      azureContainerRegistry: '{"loginServer":"kuberepoctsvishwa2024.azurecr.io", "id" : "/subscriptions/4f27598e-0d8b-448c-bc79-389fa0e915b6/resourceGroups/rg-kube/providers/Microsoft.ContainerRegistry/registries/kuberepoctsvishwa2024"}'
+      action: Push an image
+      imageName: kuberepoctsvishwa2024:$(Build.BuildId)
+  - script: |
+      docker image rmi kuberepoctsvishwa2024.azurecr.io/kuberepoctsvishwa2024:$(($(Build.BuildId)-1))
+      docker rm cont1 -f | true
+      az acr repository delete --name kuberepoctsvishwa2024 --image kuberepoctsvishwa2024:$(($(Build.BuildId)-1))
+      docker run -d -p 80:80 --name cont1 kuberepoctsvishwa2024.azurecr.io/kuberepoctsvishwa2024:$(Build.BuildId) &
+    displayName: Build
+  - task: trivy@1
+    inputs:
+      version: 'latest'
+      debug: true
+      image: 'kuberepoctsvishwa2024.azurecr.io/kuberepoctsvishwa2024:$(Build.BuildId)'
+      severities: 'CRITICAL,HIGH,MEDIUM'

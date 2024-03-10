@@ -1,0 +1,65 @@
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\VMUser\Documents\K8sTF> docker build -t shubImage .
+invalid argument "shubImage" for "-t, --tag" flag: invalid reference format: repository
+name must be lowercase
+See 'docker build --help'.
+PS C:\Users\VMUser\Documents\K8sTF> docker build -t shub-image .
+[+] Building 24.7s (7/7) FINISHED
+ => [internal] load build definition from Dockerfile                               0.2s
+ => => transferring dockerfile: 475B                                               0.1s
+ => [internal] load .dockerignore                                                  0.2s
+ => => transferring context: 2B                                                    0.0s
+ => [internal] load metadata for docker.io/library/httpd:latest                    4.8s
+ => [internal] load build context                                                  0.3s
+ => => transferring context: 374B                                                  0.0s
+ => [1/2] FROM docker.io/library/httpd:latest@sha256:5ee9ec089bab71ffcb85734e2f7  17.2s
+ => => resolve docker.io/library/httpd:latest@sha256:5ee9ec089bab71ffcb85734e2f70  0.2s
+ => => sha256:5ee9ec089bab71ffcb85734e2f7018171bcb2d6707f402779d3 9.43kB / 9.43kB  0.0s
+ => => sha256:ecf19d91df773a43b1df424b77dfe42e992129de74919ce40f7 2.04kB / 2.04kB  0.0s
+ => => sha256:59bcd61b45fd94a7f19314d259effc3da8b42a0e157263af224 8.02kB / 8.02kB  0.0s
+ => => sha256:c57ee5000d61345aa3ee6684794a8110328e2274d9a5ae785 29.15MB / 29.15MB  7.1s
+ => => sha256:ef22398cad3c99d77ded290f17cc9b6f84470b11cefb4e8c9aab5b5 145B / 145B  0.9s
+ => => sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc3 32B / 32B  1.0s
+ => => sha256:f420b40fd7be14050fbcdf648809e3d4177f8de6e33c9940ea9 4.01MB / 4.01MB  2.7s
+ => => sha256:ea4892b1a58d0b34a8d764c36795e1301a7275fc662e56837 31.20MB / 31.20MB  8.0s
+ => => sha256:1fe3871b50ff6024c1f7daa2616126251845ca17fc9565d88d44eaf 293B / 293B  3.1s
+ => => extracting sha256:c57ee5000d61345aa3ee6684794a8110328e2274d9a5ae7855969d1a  3.4s
+ => => extracting sha256:ef22398cad3c99d77ded290f17cc9b6f84470b11cefb4e8c9aab5b55  0.0s
+ => => extracting sha256:4f4fb700ef54461cfa02571ae0db9a0dc1e0cdb5577484a6d75e68dc  0.0s
+ => => extracting sha256:f420b40fd7be14050fbcdf648809e3d4177f8de6e33c9940ea96d590  0.3s
+ => => extracting sha256:ea4892b1a58d0b34a8d764c36795e1301a7275fc662e5683705f457d  3.1s
+ => => extracting sha256:1fe3871b50ff6024c1f7daa2616126251845ca17fc9565d88d44eaf4  0.0s
+ => [2/2] COPY ./index.html /usr/local/apache2/htdocs/                             1.8s
+ => exporting to image                                                             0.3s
+ => => exporting layers                                                            0.2s
+ => => writing image sha256:708c8a41c4a6344e663e73fe2afcd4941da7f644e6b8fbae1589e  0.0s
+ => => naming to docker.io/library/shub-image                                      0.0s
+
+Use 'docker scan' to run Snyk tests against images to find vulnerabilities and learn how
+ to fix them
+PS C:\Users\VMUser\Documents\K8sTF> docker ps
+CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES
+PS C:\Users\VMUser\Documents\K8sTF> docker image ls
+REPOSITORY   TAG       IMAGE ID       CREATED          SIZE
+shub-image   latest    708c8a41c4a6   20 seconds ago   167MB
+alpine/git   latest    241890ad72b1   21 months ago    38.2MB
+PS C:\Users\VMUser\Documents\K8sTF> docker run -p 8080:80 shub-mage
+Unable to find image 'shub-mage:latest' locally
+docker: Error response from daemon: pull access denied for shub-mage, repository does no
+t exist or may require 'docker login': denied: requested access to the resource is denie
+d.
+See 'docker run --help'.
+PS C:\Users\VMUser\Documents\K8sTF> docker run -p 8080:80 shub-image
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, u
+sing 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
+AH00558: httpd: Could not reliably determine the server's fully qualified domain name, u
+sing 172.17.0.2. Set the 'ServerName' directive globally to suppress this message
+[Mon Feb 12 14:02:59.163024 2024] [mpm_event:notice] [pid 1:tid 140200478803840] AH00489
+: Apache/2.4.58 (Unix) configured -- resuming normal operations
+[Mon Feb 12 14:02:59.163227 2024] [core:notice] [pid 1:tid 140200478803840] AH00094: Com
+mand line: 'httpd -D FOREGROUND'
+172.17.0.1 - - [12/Feb/2024:14:03:55 +0000] "GET / HTTP/1.1" 200 335
+172.17.0.1 - - [12/Feb/2024:14:03:55 +0000] "GET /favicon.ico HTTP/1.1" 404 196
+172.17.0.1 - - [12/Feb/2024:14:04:47 +0000] "-" 408 -

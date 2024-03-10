@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    env: sandbox
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      env: sandbox
+  template:
+    metadata:
+      labels:
+        env: sandbox
+    spec:
+      containers:
+      - name: frontend
+        image: acrshubdemo01.azurecr.io/frontend-image:v1
+        ports:
+        - containerPort: 80
+      - name: backend
+        image: acrshubdemo01.azurecr.io/backend-image:v1
+        ports:
+          - containerPort: 3000

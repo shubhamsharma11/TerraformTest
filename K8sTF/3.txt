@@ -1,0 +1,58 @@
+docker run --name repo alpine/git clone https://github.com/docker/getting-started.git
+az group create --name rg-kube --location "East US"
+az aks create -g rg-kube -n myAKSCluster --enable-managed-identity --node-count 1 --enable-addons monitoring --enable-msi-auth-for-monitoring --attach-acr kuberepoctsshub --generate-ssh-keys
+az login
+az acr create --resource-group rg-kube --name kuberepoctsshub --sku Basic
+terraform init
+terraform apply
+
+az login
+az account set --subscription 3b1bfc9b-7c37-48b7-b852-c4208989b7d1
+az ad sp create-for-rbac --name spDemo01 --role Contributor --scopes /subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1
+terraform init
+terraform plan
+terraform apply
+az aks get-credentials --resource-group rgDemo01 --name aksDemo01
+kubectl get nodes
+docker build -t shub-image .
+docker ps
+docker image ls
+docker run -p 8080:80 shub-image
+az acr create --resource-group rgDemo01 --name acrshubdemo01 --sku Basic
+docker tag shub-image acrshubdemo01.azurecr.io/shub-image:v1
+az acr login --name acrshubdemo01
+docker push acrshubdemo01.azurecr.io/shub-image:v1
+az acr repository list --name acrshubdemo01 --output table
+kubectl apply -f pod.yaml
+kubectl apply -f pod.yml
+kubectl exec -it web-pod -- /bin/bash
+kubectl logs web-pod -c web-container
+kubectl get pods
+kubectl rollout undo deployment nginx-deployment -n ns01 --to-revision=1
+kubectl rollout history deployment nginx-deployment -n ns01
+
+
+
+
+{
+  "appId": "b3e7b1ea-6299-46b5-a755-b35935c2e50c",
+  "displayName": "spDemo01",
+  "password": "mcX8mZ_e_Yk9NBz_K107hG~z3D3.-YC7S2",
+  "tenant": "fb4ebd65-b78b-42a4-b64c-26f5692e3c7c"
+}
+
+
+
+identity {
+    type = "SystemAssigned"
+  }
+
+
+
+{
+  "appId": "b3e7b1ea-6299-46b5-a755-b35935c2e50c",
+  "displayName": "spDemo01",
+  "password": "r1PiqTxpHVv.S0c2lsbE3CxZP.5rOj4hTL",
+  "tenant": "fb4ebd65-b78b-42a4-b64c-26f5692e3c7c"
+  subscription_id = "3b1bfc9b-7c37-48b7-b852-c4208989b7d1"
+}

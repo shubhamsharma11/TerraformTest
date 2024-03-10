@@ -1,0 +1,31 @@
+name: $(date:yyyyMMdd)$(rev:.r)
+trigger:
+  - dev
+jobs:
+- job: Job_1
+  displayName: Docker Agent
+  pool:
+    name: UAT
+  steps:
+  - checkout: self
+    fetchDepth: 1
+  - task: Docker@0
+    displayName: 'Build an image'
+    inputs:
+      containerregistrytype: 'Container Registry'
+      dockerRegistryConnection: 'ACR-Login'
+      imageName: 'kuberepoctsvishwa2024:$(Build.BuildId)'
+  
+  - task: Docker@0
+    displayName: 'Push an image'
+    inputs:
+      containerregistrytype: 'Container Registry'
+      dockerRegistryConnection: 'ACR-Login'
+      action: 'Push an image'
+      imageName: 'kuberepoctsvishwa2024:$(Build.BuildId)'
+  - script: |
+      docker image rmi kuberepoctsvishwa2024.azurecr.io/kuberepoctsvishwa2024:$(($(Build.BuildId)-1))
+      docker rm cont1 -f | true
+      az acr repository delete --name kuberepoctsvishwa2024 --image kuberepoctsvishwa2024:$(($(Build.BuildId)-1))
+      docker run -d -p 80:80 --name cont1 kuberepoctsvishwa2024.azurecr.io/kuberepoctsvishwa2024:$(Build.BuildId) &
+    displayName: Build

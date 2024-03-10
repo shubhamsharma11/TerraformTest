@@ -1,0 +1,48 @@
+provider "http" {}
+terraform {
+  required_providers {
+    azuredevops = {
+      source  = "microsoft/azuredevops"
+      version = "~> 0.0"
+    }
+  }
+}
+provider "azuredevops" {
+  
+}
+data "http" "agent_registration" {
+  url = "https://dev.azure.com/${var.organization}/${var.project}/_apis/distributedtask/pools/${data.azurerm_devops_agent_pool.example.id}/agents?api-version=6.0-preview.1"
+  headers = {
+    "Authorization" = "Basic ${var.pat}"
+  }
+}
+locals {
+  agent_url   = jsondecode(data.http.agent_registration.body).value[0].registrationUrl
+  agent_token = jsondecode(data.http.agent_registration.body).value[0].accessToken
+}
+
+output "agent_url" {
+  value = local.agent_url
+}
+
+output "agent_token" {
+  value = local.agent_token
+}
+
+provider "http" {}
+
+data "http" "agent_registration" {
+  url = "https://dev.azure.com/${var.organization}/${var.project}/_apis/distributedtask/pools/${data.azurerm_devops_agent_pool.example.id}/agents?api-version=6.0-preview.1&Authorization=Basic ${var.pat}"
+}
+
+
+azurerm_public_ip.pips.
+
+
+  - task: trivy@1
+    inputs:
+      version: 'latest'
+      debug: true
+      path: '/usr/local/apache2/htdocs'
+      image: 'kuberepoctsvishwa2024.azurecr.io/kuberepoctsvishwa2024:$(Build.BuildId)'
+      severities: 'CRITICAL,HIGH,MEDIUM'

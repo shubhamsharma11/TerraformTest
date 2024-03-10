@@ -1,0 +1,14 @@
+# This file is for cluster IP
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service
+  labels:
+    env: sandbox
+spec:  
+  ports:
+   - protocol: TCP
+     port: 92  # pod port = container port
+     targetPort: 80  # service port
+  selector:
+    env: prod

@@ -1,0 +1,1012 @@
+   "state": "Enabled",
+    "tenantId": "fb4ebd65-b78b-42a4-b64c-26f5692e3c7c",
+    "user": {
+      "name": "Shubham_1704792383785@npstackroute.onmicrosoft.com",
+      "type": "user"
+    }
+  },
+  {
+    "cloudName": "AzureCloud",
+    "homeTenantId": "fb4ebd65-b78b-42a4-b64c-26f5692e3c7c",
+    "id": "01e8c0b2-cb6d-48c7-9a53-38da6aadfb97",
+    "isDefault": false,
+    "managedByTenants": [],
+    "name": "npstackro-1676009602788",
+    "state": "Enabled",
+    "tenantId": "fb4ebd65-b78b-42a4-b64c-26f5692e3c7c",
+    "user": {
+      "name": "Shubham_1704792383785@npstackroute.onmicrosoft.com",
+      "type": "user"
+    }
+  }
+]
+PS C:\Users\VMUser\Documents\K8sTF> terraform
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:1
++ terraform
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\VMUser\Documents\K8sTF> terraform
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:1
++ terraform
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\VMUser\Documents\K8sTF>
+ *  History restored 
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+PS C:\Users\VMUser\Documents\K8sTF> terraform
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:1
++ terraform
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\VMUser\Documents\K8sTF> terraform init
+>> terraform apply
+>>
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:1
++ terraform init
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:2 char:1
++ terraform apply
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\VMUser\Documents\K8sTF> terraform init
+>> terraform apply
+>>
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:1
++ terraform init
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:2 char:1
++ terraform apply
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\VMUser\Documents\K8sTF> terraform
+terraform : The term 'terraform' is not recognized as the name of a cmdlet, function, script file, or operable program. Check the spelling of the name, or if a path was included, verify that the 
+path is correct and try again.
+At line:1 char:1
++ terraform
++ ~~~~~~~~~
+    + CategoryInfo          : ObjectNotFound: (terraform:String) [], CommandNotFoundException
+    + FullyQualifiedErrorId : CommandNotFoundException
+ 
+PS C:\Users\VMUser\Documents\K8sTF>
+ *  History restored 
+
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+PS C:\Users\VMUser\Documents\K8sTF> terraform init
+
+Initializing the backend...
+Initializing modules...
+╷
+│ Error: Module not found
+│
+│   on main.tf line 10:
+│   10: module "aks" {
+│
+│ Module "aks" (from main.tf:10) cannot be found in the module registry at registry.terraform.io.
+╵
+
+PS C:\Users\VMUser\Documents\K8sTF> terraform init
+
+Initializing the backend...
+Initializing modules...
+╷
+│ Error: Module not found
+│
+│   on main.tf line 10:
+│   10: module "aks" {
+│
+│ Module "aks" (from main.tf:10) cannot be found in the module registry at registry.terraform.io.
+╵
+
+PS C:\Users\VMUser\Documents\K8sTF> terraform init
+
+Initializing the backend...
+
+Initializing provider plugins...
+- Finding latest version of hashicorp/azurerm...
+- Installing hashicorp/azurerm v3.91.0...
+- Installed hashicorp/azurerm v3.91.0 (signed by HashiCorp)
+
+Terraform has created a lock file .terraform.lock.hcl to record the provider
+selections it made above. Include this file in your version control repository
+so that Terraform can guarantee to make the same selections by default when
+you run "terraform init" in the future.
+
+Terraform has been successfully initialized!
+
+You may now begin working with Terraform. Try running "terraform plan" to see
+any changes that are required for your infrastructure. All Terraform commands
+should now work.
+
+If you ever set or change modules or backend configuration for Terraform,
+rerun this command to reinitialize your working directory. If you forget, other
+commands will detect it and remind you to do so if necessary.
+PS C:\Users\VMUser\Documents\K8sTF> terraform plan
+╷
+│ Error: Insufficient features blocks
+│
+│   on main.tf line 1, in provider "azurerm":
+│    1: provider "azurerm" {
+│
+│ At least 1 "features" blocks are required.
+╵
+╷
+│ Error: Unsupported argument
+│
+│   on main.tf line 2, in provider "azurerm":
+│    2:   features = {}
+│
+│ An argument named "features" is not expected here. Did you mean to define a block of type "features"?
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform plan
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 11, in resource "azurerm_kubernetes_cluster" "default":
+│   11:   name                = "${random_pet.prefix.id}-aks"
+│
+│ A managed resource "random_pet" "prefix" has not been declared in the root module.
+╵
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 12, in resource "azurerm_kubernetes_cluster" "default":
+│   12:   location            = azurerm_resource_group.default.location
+│
+│ A managed resource "azurerm_resource_group" "default" has not been declared in the root module.
+╵
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 13, in resource "azurerm_kubernetes_cluster" "default":
+│   13:   resource_group_name = azurerm_resource_group.default.name
+│
+│ A managed resource "azurerm_resource_group" "default" has not been declared in the root module.
+╵
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 14, in resource "azurerm_kubernetes_cluster" "default":
+│   14:   dns_prefix          = "${random_pet.prefix.id}-k8s"
+│
+│ A managed resource "random_pet" "prefix" has not been declared in the root module.
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform plan
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 12, in resource "azurerm_kubernetes_cluster" "default":
+│   12:   location            = azurerm_resource_group.default.location
+│
+│ A managed resource "azurerm_resource_group" "default" has not been declared in the root module.
+╵
+╷
+│ Error: Reference to undeclared resource
+│
+│   on main.tf line 13, in resource "azurerm_kubernetes_cluster" "default":
+│   13:   resource_group_name = azurerm_resource_group.default.name
+│
+│ A managed resource "azurerm_resource_group" "default" has not been declared in the root module.
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform plan
+╷
+│ Error: Invalid combination of arguments
+│
+│   with azurerm_kubernetes_cluster.default,
+│   on main.tf line 10, in resource "azurerm_kubernetes_cluster" "default":
+│   10: resource "azurerm_kubernetes_cluster" "default" {
+│
+│ "service_principal": one of `identity,service_principal` must be specified
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform plan
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.default will be created
+  + resource "azurerm_kubernetes_cluster" "default" {
+      + api_server_authorized_ip_ranges     = (known after apply)
+      + dns_prefix                          = "k8sdns"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + image_cleaner_enabled               = false
+      + image_cleaner_interval_hours        = 48
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = "1.26.3"
+      + location                            = "eastus"
+      + name                                = "aksDemo01"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + public_network_access_enabled       = true
+      + resource_group_name                 = "rgDemo01"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + support_plan                        = "KubernetesOfficial"
+      + tags                                = {
+          + "environment" = "Demo"
+        }
+      + workload_identity_enabled           = false
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "default"
+          + node_count           = 2
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = 30
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "Standard_D2_v2"
+          + workload_runtime     = (known after apply)
+        }
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+    }
+
+  # azurerm_resource_group.rg will be created
+  + resource "azurerm_resource_group" "rg" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "rgDemo01"
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+
+Note: You didn't use the -out option to save this plan, so Terraform can't guarantee to take exactly these actions if you run "terraform apply" now.
+PS C:\Users\VMUser\Documents\K8sTF>
+PS C:\Users\VMUser\Documents\K8sTF> terraform apply
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.default will be created
+  + resource "azurerm_kubernetes_cluster" "default" {
+      + api_server_authorized_ip_ranges     = (known after apply)
+      + dns_prefix                          = "k8sdns"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + image_cleaner_enabled               = false
+      + image_cleaner_interval_hours        = 48
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = "1.26.3"
+      + location                            = "eastus"
+      + name                                = "aksDemo01"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + public_network_access_enabled       = true
+      + resource_group_name                 = "rgDemo01"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + support_plan                        = "KubernetesOfficial"
+      + tags                                = {
+          + "environment" = "Demo"
+        }
+      + workload_identity_enabled           = false
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "default"
+          + node_count           = 2
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = 30
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "Standard_D2_v2"
+          + workload_runtime     = (known after apply)
+        }
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+    }
+
+  # azurerm_resource_group.rg will be created
+  + resource "azurerm_resource_group" "rg" {
+      + id       = (known after apply)
+      + location = "eastus"
+      + name     = "rgDemo01"
+    }
+
+Plan: 2 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+azurerm_resource_group.rg: Creating...
+azurerm_resource_group.rg: Creation complete after 4s [id=/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/resourceGroups/rgDemo01]
+azurerm_kubernetes_cluster.default: Creating...
+╷
+│ Error: creating Kubernetes Cluster (Subscription: "3b1bfc9b-7c37-48b7-b852-c4208989b7d1"
+│ Resource Group Name: "rgDemo01"
+│ Kubernetes Cluster Name: "aksDemo01"): managedclusters.ManagedClustersClient#CreateOrUpdate: Failure sending request: StatusCode=0 -- Original Error: Code="RequestDisallowedByPolicy" Message="Res
+ource 'aksDemo01' was disallowed by policy. Policy identifiers: '[{\"policyAssignment\":{\"name\":\"AzureB2C\",\"id\":\"/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/providers/Microsoft.Autho
+rization/policyAssignments/a4ccb5cd-207b-44ca-ae2b-3cf859622e07\"},\"policyDefinition\":{\"name\":\"AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2\",\"id\":\"/subscriptions/3b1bfc9b-7c37-48b7-b852-c42089
+89b7d1/providers/Microsoft.Authorization/policyDefinitions/AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2\"},\"policySetDefinition\":{\"name\":\"AzureB2C\",\"id\":\"/subscriptions/3b1bfc9b-7c37-48b7-b852
+-c4208989b7d1/providers/Microsoft.Authorization/policySetDefinitions/AzureB2C\"}}]'." Target="aksDemo01" AdditionalInfo=[{"info":{"evaluationDetails":{"evaluatedExpressions":[{"expression":"type","
+expressionKind":"Field","expressionValue":"Microsoft.ContainerService/managedClusters","operator":"Equals","path":"type","result":"True","targetValue":"Microsoft.ContainerService/managedClusters"},
+{"expression":"Microsoft.ContainerService/managedClusters/agentPoolProfiles[*].vmSize","expressionKind":"Field","expressionValue":"Standard_D2_v2","operator":"In","path":"properties.agentPoolProfil
+es[*].vmSize","result":"False","targetValue":["Standard_DS1_v2","Standard_D2s_v3"]}]},"policyAssignmentDisplayName":"AzureB2C","policyAssignmentId":"/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b
+7d1/providers/Microsoft.Authorization/policyAssignments/a4ccb5cd-207b-44ca-ae2b-3cf859622e07","policyAssignmentName":"a4ccb5cd-207b-44ca-ae2b-3cf859622e07","policyAssignmentParameters":{},"policyAs
+signmentScope":"/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1","policyDefinitionDisplayName":"AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2","policyDefinitionEffect":"deny","policyDefinitionId":"/
+subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/providers/Microsoft.Authorization/policyDefinitions/AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2","policyDefinitionName":"AzureB2C_AllowAKSStandardDS1
+v2D2sv3F4sv2","policyDefinitionReferenceId":"2532272946860563202","policyExemptionIds":[],"policySetDefinitionDisplayName":"AzureB2C","policySetDefinitionId":"/subscriptions/3b1bfc9b-7c37-48b7-b852
+-c4208989b7d1/providers/Microsoft.Authorization/policySetDefinitions/AzureB2C","policySetDefinitionName":"AzureB2C"},"type":"PolicyViolation"}]
+│
+│   with azurerm_kubernetes_cluster.default,
+│   on main.tf line 10, in resource "azurerm_kubernetes_cluster" "default":
+│   10: resource "azurerm_kubernetes_cluster" "default" {
+│
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform apply
+azurerm_resource_group.rg: Refreshing state... [id=/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/resourceGroups/rgDemo01]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.default will be created
+  + resource "azurerm_kubernetes_cluster" "default" {
+      + api_server_authorized_ip_ranges     = (known after apply)
+      + dns_prefix                          = "k8sdns"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + image_cleaner_enabled               = false
+      + image_cleaner_interval_hours        = 48
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = "1.27.7"
+      + location                            = "eastus"
+      + name                                = "aksDemo01"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + public_network_access_enabled       = true
+      + resource_group_name                 = "rgDemo01"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + support_plan                        = "KubernetesOfficial"
+      + tags                                = {
+          + "environment" = "Demo"
+        }
+      + workload_identity_enabled           = false
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "default"
+          + node_count           = 2
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = 16
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "Standard_D4ds_v5"
+          + workload_runtime     = (known after apply)
+        }
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+azurerm_kubernetes_cluster.default: Creating...
+╷
+│ Error: creating Kubernetes Cluster (Subscription: "3b1bfc9b-7c37-48b7-b852-c4208989b7d1"
+│ Resource Group Name: "rgDemo01"
+│ Kubernetes Cluster Name: "aksDemo01"): managedclusters.ManagedClustersClient#CreateOrUpdate: Failure sending request: StatusCode=0 -- Original Error: Code="RequestDisallowedByPolicy" Message="Res
+ource 'aksDemo01' was disallowed by policy. Policy identifiers: '[{\"policyAssignment\":{\"name\":\"AzureB2C\",\"id\":\"/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/providers/Microsoft.Autho
+rization/policyAssignments/a4ccb5cd-207b-44ca-ae2b-3cf859622e07\"},\"policyDefinition\":{\"name\":\"AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2\",\"id\":\"/subscriptions/3b1bfc9b-7c37-48b7-b852-c42089
+89b7d1/providers/Microsoft.Authorization/policyDefinitions/AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2\"},\"policySetDefinition\":{\"name\":\"AzureB2C\",\"id\":\"/subscriptions/3b1bfc9b-7c37-48b7-b852
+-c4208989b7d1/providers/Microsoft.Authorization/policySetDefinitions/AzureB2C\"}}]'." Target="aksDemo01" AdditionalInfo=[{"info":{"evaluationDetails":{"evaluatedExpressions":[{"expression":"type","
+expressionKind":"Field","expressionValue":"Microsoft.ContainerService/managedClusters","operator":"Equals","path":"type","result":"True","targetValue":"Microsoft.ContainerService/managedClusters"},
+{"expression":"Microsoft.ContainerService/managedClusters/agentPoolProfiles[*].vmSize","expressionKind":"Field","expressionValue":"Standard_D4ds_v5","operator":"In","path":"properties.agentPoolProf
+iles[*].vmSize","result":"False","targetValue":["Standard_DS1_v2","Standard_D2s_v3"]}]},"policyAssignmentDisplayName":"AzureB2C","policyAssignmentId":"/subscriptions/3b1bfc9b-7c37-48b7-b852-c420898
+9b7d1/providers/Microsoft.Authorization/policyAssignments/a4ccb5cd-207b-44ca-ae2b-3cf859622e07","policyAssignmentName":"a4ccb5cd-207b-44ca-ae2b-3cf859622e07","policyAssignmentParameters":{},"policy
+AssignmentScope":"/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1","policyDefinitionDisplayName":"AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2","policyDefinitionEffect":"deny","policyDefinitionId":
+"/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/providers/Microsoft.Authorization/policyDefinitions/AzureB2C_AllowAKSStandardDS1v2D2sv3F4sv2","policyDefinitionName":"AzureB2C_AllowAKSStandardD
+S1v2D2sv3F4sv2","policyDefinitionReferenceId":"2532272946860563202","policyExemptionIds":[],"policySetDefinitionDisplayName":"AzureB2C","policySetDefinitionId":"/subscriptions/3b1bfc9b-7c37-48b7-b8
+52-c4208989b7d1/providers/Microsoft.Authorization/policySetDefinitions/AzureB2C","policySetDefinitionName":"AzureB2C"},"type":"PolicyViolation"}]
+│
+│   with azurerm_kubernetes_cluster.default,
+│   on main.tf line 10, in resource "azurerm_kubernetes_cluster" "default":
+│   10: resource "azurerm_kubernetes_cluster" "default" {
+│
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform apply
+azurerm_resource_group.rg: Refreshing state... [id=/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/resourceGroups/rgDemo01]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.default will be created
+  + resource "azurerm_kubernetes_cluster" "default" {
+      + api_server_authorized_ip_ranges     = (known after apply)
+      + dns_prefix                          = "k8sdns"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + image_cleaner_enabled               = false
+      + image_cleaner_interval_hours        = 48
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = "1.27.7"
+      + location                            = "eastus"
+      + name                                = "aksDemo01"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + public_network_access_enabled       = true
+      + resource_group_name                 = "rgDemo01"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + support_plan                        = "KubernetesOfficial"
+      + tags                                = {
+          + "environment" = "Demo"
+        }
+      + workload_identity_enabled           = false
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "default"
+          + node_count           = 2
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = 16
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "Standard_D2s_v3"
+          + workload_runtime     = (known after apply)
+        }
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+azurerm_kubernetes_cluster.default: Creating...
+╷
+│ Error: creating Kubernetes Cluster (Subscription: "3b1bfc9b-7c37-48b7-b852-c4208989b7d1"
+│ Resource Group Name: "rgDemo01"
+│ Kubernetes Cluster Name: "aksDemo01"): managedclusters.ManagedClustersClient#CreateOrUpdate: Failure sending request: StatusCode=0 -- Original Error: Code="InvalidParameter" Message="The OSDiskSi
+ze for Agent default cannot be less than 30GB or larger than 2048GB."
+│
+│   with azurerm_kubernetes_cluster.default,
+│   on main.tf line 10, in resource "azurerm_kubernetes_cluster" "default":
+│   10: resource "azurerm_kubernetes_cluster" "default" {
+│
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform apply
+azurerm_resource_group.rg: Refreshing state... [id=/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/resourceGroups/rgDemo01]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.default will be created
+  + resource "azurerm_kubernetes_cluster" "default" {
+      + api_server_authorized_ip_ranges     = (known after apply)
+      + dns_prefix                          = "k8sdns"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + image_cleaner_enabled               = false
+      + image_cleaner_interval_hours        = 48
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = "1.27.7"
+      + location                            = "eastus"
+      + name                                = "aksDemo01"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + public_network_access_enabled       = true
+      + resource_group_name                 = "rgDemo01"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + support_plan                        = "KubernetesOfficial"
+      + tags                                = {
+          + "environment" = "Demo"
+        }
+      + workload_identity_enabled           = false
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "default"
+          + node_count           = 2
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = 4
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "Standard_D2s_v3"
+          + workload_runtime     = (known after apply)
+        }
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+azurerm_kubernetes_cluster.default: Creating...
+╷
+│ Error: creating Kubernetes Cluster (Subscription: "3b1bfc9b-7c37-48b7-b852-c4208989b7d1"
+│ Resource Group Name: "rgDemo01"
+│ Kubernetes Cluster Name: "aksDemo01"): managedclusters.ManagedClustersClient#CreateOrUpdate: Failure sending request: StatusCode=0 -- Original Error: Code="InvalidParameter" Message="The OSDiskSi
+ze for Agent default cannot be less than 30GB or larger than 2048GB."
+│
+│   with azurerm_kubernetes_cluster.default,
+│   on main.tf line 10, in resource "azurerm_kubernetes_cluster" "default":
+│   10: resource "azurerm_kubernetes_cluster" "default" {
+│
+╵
+PS C:\Users\VMUser\Documents\K8sTF> terraform apply
+azurerm_resource_group.rg: Refreshing state... [id=/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/resourceGroups/rgDemo01]
+
+Terraform used the selected providers to generate the following execution plan. Resource actions are indicated with the following symbols:
+  + create
+
+Terraform will perform the following actions:
+
+  # azurerm_kubernetes_cluster.default will be created
+  + resource "azurerm_kubernetes_cluster" "default" {
+      + api_server_authorized_ip_ranges     = (known after apply)
+      + dns_prefix                          = "k8sdns"
+      + fqdn                                = (known after apply)
+      + http_application_routing_zone_name  = (known after apply)
+      + id                                  = (known after apply)
+      + image_cleaner_enabled               = false
+      + image_cleaner_interval_hours        = 48
+      + kube_admin_config                   = (sensitive value)
+      + kube_admin_config_raw               = (sensitive value)
+      + kube_config                         = (sensitive value)
+      + kube_config_raw                     = (sensitive value)
+      + kubernetes_version                  = "1.27.7"
+      + location                            = "eastus"
+      + name                                = "aksDemo01"
+      + node_resource_group                 = (known after apply)
+      + node_resource_group_id              = (known after apply)
+      + oidc_issuer_url                     = (known after apply)
+      + portal_fqdn                         = (known after apply)
+      + private_cluster_enabled             = false
+      + private_cluster_public_fqdn_enabled = false
+      + private_dns_zone_id                 = (known after apply)
+      + private_fqdn                        = (known after apply)
+      + public_network_access_enabled       = true
+      + resource_group_name                 = "rgDemo01"
+      + role_based_access_control_enabled   = true
+      + run_command_enabled                 = true
+      + sku_tier                            = "Free"
+      + support_plan                        = "KubernetesOfficial"
+      + tags                                = {
+          + "environment" = "Demo"
+        }
+      + workload_identity_enabled           = false
+
+      + default_node_pool {
+          + kubelet_disk_type    = (known after apply)
+          + max_pods             = (known after apply)
+          + name                 = "default"
+          + node_count           = 2
+          + node_labels          = (known after apply)
+          + orchestrator_version = (known after apply)
+          + os_disk_size_gb      = 30
+          + os_disk_type         = "Managed"
+          + os_sku               = (known after apply)
+          + scale_down_mode      = "Delete"
+          + type                 = "VirtualMachineScaleSets"
+          + ultra_ssd_enabled    = false
+          + vm_size              = "Standard_D2s_v3"
+          + workload_runtime     = (known after apply)
+        }
+
+      + identity {
+          + principal_id = (known after apply)
+          + tenant_id    = (known after apply)
+          + type         = "SystemAssigned"
+        }
+    }
+
+Plan: 1 to add, 0 to change, 0 to destroy.
+
+Do you want to perform these actions?
+  Terraform will perform the actions described above.
+  Only 'yes' will be accepted to approve.
+
+  Enter a value: yes
+
+azurerm_kubernetes_cluster.default: Creating...
+azurerm_kubernetes_cluster.default: Still creating... [10s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [20s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [30s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [40s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [50s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [1m0s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [1m10s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [1m20s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [1m30s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [1m40s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [1m50s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [2m0s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [2m10s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [2m20s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [2m30s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [2m40s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [2m50s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [3m0s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [3m10s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [3m20s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [3m30s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [3m40s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [3m50s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [4m0s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [4m10s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [4m20s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [4m30s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [4m40s elapsed]
+azurerm_kubernetes_cluster.default: Still creating... [4m50s elapsed]
+azurerm_kubernetes_cluster.default: Creation complete after 4m54s [id=/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/resourceGroups/rgDemo01/providers/Microsoft.ContainerService/managedCluster
+s/aksDemo01]
+
+Apply complete! Resources: 1 added, 0 changed, 0 destroyed.
+PS C:\Users\VMUser\Documents\K8sTF> az aks get-credentials --resource-group rgDemo01 --name aksDemo01
+?[93mMerged "aksDemo01" as current context in C:\Users\VMUser\.kube\config?[0m
+PS C:\Users\VMUser\Documents\K8sTF> kubectl
+kubectl controls the Kubernetes cluster manager.
+
+ Find more information at: https://kubernetes.io/docs/reference/kubectl/overview/
+
+Basic Commands (Beginner):
+  create          Create a resource from a file or from stdin
+  expose          Take a replication controller, service, deployment or pod and expose it as a new Kubernetes service
+  run             Run a particular image on the cluster
+  set             Set specific features on objects
+
+Basic Commands (Intermediate):
+  explain         Get documentation for a resource
+  get             Display one or many resources
+  edit            Edit a resource on the server
+  delete          Delete resources by file names, stdin, resources and names, or by resources and label selector
+
+Deploy Commands:
+  rollout         Manage the rollout of a resource
+  scale           Set a new size for a deployment, replica set, or replication controller
+  autoscale       Auto-scale a deployment, replica set, stateful set, or replication controller
+
+Cluster Management Commands:
+  certificate     Modify certificate resources.
+  cluster-info    Display cluster information
+  top             Display resource (CPU/memory) usage
+  cordon          Mark node as unschedulable
+  uncordon        Mark node as schedulable
+  drain           Drain node in preparation for maintenance
+  taint           Update the taints on one or more nodes
+
+Troubleshooting and Debugging Commands:
+  describe        Show details of a specific resource or group of resources
+  logs            Print the logs for a container in a pod
+  attach          Attach to a running container
+  exec            Execute a command in a container
+  port-forward    Forward one or more local ports to a pod
+  proxy           Run a proxy to the Kubernetes API server
+  cp              Copy files and directories to and from containers
+  auth            Inspect authorization
+  debug           Create debugging sessions for troubleshooting workloads and nodes
+
+Advanced Commands:
+  diff            Diff the live version against a would-be applied version
+  apply           Apply a configuration to a resource by file name or stdin
+  patch           Update fields of a resource
+  replace         Replace a resource by file name or stdin
+  wait            Experimental: Wait for a specific condition on one or many resources
+  kustomize       Build a kustomization target from a directory or URL.
+
+Settings Commands:
+  label           Update the labels on a resource
+  annotate        Update the annotations on a resource
+  completion      Output shell completion code for the specified shell (bash, zsh or fish)
+
+Other Commands:
+  alpha           Commands for features in alpha
+  api-resources   Print the supported API resources on the server
+  api-versions    Print the supported API versions on the server, in the form of "group/version"
+  config          Modify kubeconfig files
+  plugin          Provides utilities for interacting with plugins
+  version         Print the client and server version information
+
+Usage:
+  kubectl [flags] [options]
+
+Use "kubectl <command> --help" for more information about a given command.
+Use "kubectl options" for a list of global command-line options (applies to all commands).
+PS C:\Users\VMUser\Documents\K8sTF> kubectl node
+error: unknown command "node" for "kubectl"
+PS C:\Users\VMUser\Documents\K8sTF> kubectl pods
+error: unknown command "pods" for "kubectl"
+
+Did you mean this?
+        logs
+PS C:\Users\VMUser\Documents\K8sTF> kubectl nodes
+error: unknown command "nodes" for "kubectl"
+PS C:\Users\VMUser\Documents\K8sTF> kubectl get nodes
+NAME                              STATUS   ROLES   AGE     VERSION
+aks-default-19881569-vmss000000   Re
+PS C:\Users\VMUser\Documents\K8sTF>  dy    agent   8m52s   v1.27.7
+PS C:\Users\VMUser\Documents\K8sTF>
+PS C:\Users\VMUser\Documents\K8sTF>
+PS C:\Users\VMUser\Documents\K8sTF> az acr create --resource-group rgDemo01 --name ACRDem
+o01 --sku Basic
+?[91margument error: Connected registry name must use only lowercase.?[0m
+PS C:\Users\VMUser\Documents\K8sTF> az acr create --resource-group rgDemo01 --name acrdem
+o01 --sku Basic
+?[91m(AlreadyInUse) The registry DNS name acrdemo01.azurecr.io is already in use. You can
+ check if the name is already claimed using following API: https://docs.microsoft.com/en-
+us/rest/api/containerregistry/registries/checknameavailability
+Code: AlreadyInUse
+Message: The registry DNS name acrdemo01.azurecr.io is already in use. You can check if t
+he name is already claimed using following API: https://docs.microsoft.com/en-us/rest/api
+/containerregistry/registries/checknameavailability?[0m
+PS C:\Users\VMUser\Documents\K8sTF> az acr create --resource-group rgDemo01 --name acrshu
+bdemo01 --sku Basic
+?[K{/ Finished ..
+  "adminUserEnabled": false,
+  "anonymousPullEnabled": false,
+  "creationDate": "2024-02-12T14:32:44.776298+00:00",
+  "dataEndpointEnabled": false,
+  "dataEndpointHostNames": [],
+  "encryption": {
+    "keyVaultProperties": null,
+    "status": "disabled"
+  },
+  "id": "/subscriptions/3b1bfc9b-7c37-48b7-b852-c4208989b7d1/resourceGroups/rgDemo01/prov
+iders/Microsoft.ContainerRegistry/registries/acrshubdemo01",
+  "identity": null,
+  "location": "eastus",
+  "loginServer": "acrshubdemo01.azurecr.io",
+  "name": "acrshubdemo01",
+  "networkRuleBypassOptions": "AzureServices",
+  "networkRuleSet": null,
+  "policies": {
+    "exportPolicy": {
+      "status": "enabled"
+    },
+    "quarantinePolicy": {
+      "status": "disabled"
+    },
+    "retentionPolicy": {
+      "days": 7,
+      "lastUpdatedTime": "2024-02-12T14:32:51.572567+00:00",
+      "status": "disabled"
+    },
+    "trustPolicy": {
+      "status": "disabled",
+      "type": "Notary"
+    }
+  },
+  "privateEndpointConnections": [],
+  "provisioningState": "Succeeded",
+  "publicNetworkAccess": "Enabled",
+  "resourceGroup": "rgDemo01",
+  "sku": {
+    "name": "Basic",
+    "tier": "Basic"
+  },
+  "status": null,
+  "systemData": {
+    "createdAt": "2024-02-12T14:32:44.776298+00:00",
+    "createdBy": "Shubham_1704792383785@npstackroute.onmicrosoft.com",
+    "createdByType": "User",
+    "lastModifiedAt": "2024-02-12T14:32:44.776298+00:00",
+    "lastModifiedBy": "Shubham_1704792383785@npstackroute.onmicrosoft.com",
+    "lastModifiedByType": "User"
+  },
+  "tags": {},
+  "type": "Microsoft.ContainerRegistry/registries",
+  "zoneRedundancy": "Disabled"
+}
+PS C:\Users\VMUser\Documents\K8sTF> docker tag shub-image acrshubdemo01.azurecr.io/shub-i
+mage:v1
+PS C:\Users\VMUser\Documents\K8sTF> docker push acrshubdemo01.azurecr.io/shub-image:v1
+The push refers to repository [acrshubdemo01.azurecr.io/shub-image]
+3284e6e084ab: Preparing
+ab3a0403a0d9: Preparing
+40a428a249db: Preparing
+24bd64e09119: Preparing
+5f70bf18a086: Preparing
+c3147eaa9536: Waiting
+fb1bd2fc5282: Waiting
+unauthorized: authentication required, visit https://aka.ms/acr/authorization for more in
+formation.
+PS C:\Users\VMUser\Documents\K8sTF> az acr login --name acrshubdemo01
+Login Succeeded
+PS C:\Users\VMUser\Documents\K8sTF> docker push acrshubdemo01.azurecr.io/shub-image:v1
+The push refers to repository [acrshubdemo01.azurecr.io/shub-image]
+3284e6e084ab: Pushed
+ab3a0403a0d9: Pushed
+40a428a249db: Pushed
+24bd64e09119: Pushed
+5f70bf18a086: Pushed
+c3147eaa9536: Pushed
+fb1bd2fc5282: Pushed
+v1: digest: sha256:4b6bd2abc42cef7b78a4293cd724a382331664de6d52cd65066e3759783d72ee size:
+ 1779
+PS C:\Users\VMUser\Documents\K8sTF> az acr repository list --name acrshubdemo01e --output
+ table
+?[93mThe resource with name 'acrshubdemo01e' and type 'Microsoft.ContainerRegistry/regist
+ries' could not be found in subscription 'npstackro-1676009149936 (3b1bfc9b-7c37-48b7-b85
+2-c4208989b7d1)'.
+Using 'acrshubdemo01e.azurecr.io' as the default registry login server.?[0m
+?[91mCould not connect to the registry login server 'acrshubdemo01e.azurecr.io'. Please v
+erify that the registry exists and the URL 'https://acrshubdemo01e.azurecr.io/v2/' is rea
+chable from your environment.
+Try running 'az acr check-health -n acrshubdemo01e --yes' to diagnose this issue.?[0m
+PS C:\Users\VMUser\Documents\K8sTF> az acr repository list --name acrshubdemo01 --output
+table
+Result
+----------
+shub-image
+PS C:\Users\VMUser\Documents\K8sTF>

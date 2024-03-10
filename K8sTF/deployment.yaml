@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    env: sandbox
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: sandbox
+  template:
+    metadata:
+      labels:
+        env: sandbox
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 92
+      - name: mysql-container
+        image: mysql:latest
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            value: root
+          - name: MYSQL_DATABASE
+            value: DB01
+          - name: MYSQL_USER
+            value: user
+          - name: MYSQL_PASSWORD
+            value: user12345
+        ports:
+          - containerPort: 3306

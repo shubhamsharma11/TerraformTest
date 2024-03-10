@@ -1,0 +1,8 @@
+version: '3'
+
+services:
+  httpd:
+    image: kuberepoctsvishwa2024.azurecr.io/kuberepoctsvishwa2024:12
+    ports:
+      - "8080:80"
+    restart: always

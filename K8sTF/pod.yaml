@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: web-pod
+spec:
+  containers:
+  - name: web-container
+    image: acrshubdemo01.azurecr.io/shub-image:v1
+    ports:
+    - containerPort: 80

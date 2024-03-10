@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    env: sandbox
+    server: s01
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      env: sandbox
+  template:
+    metadata:
+      labels:
+        env: sandbox
+        app: frontend
+    spec:
+      containers:
+      - name: nginx
+        image: nginx
+        ports:
+        - containerPort: 92

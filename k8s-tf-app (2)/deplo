@@ -1,0 +1,17 @@
+        volumeMounts:
+        - name: storage
+          mountPath: "/app/data"
+
+      volumes:
+      - name: storage
+        persistentVolumeClaim:
+          claimName: example-pvc
+
+
+    - task: JFrogGenericArtifacts@1
+      inputs:
+        command: 'Upload'
+        connection: 'jfrog-conn'
+        specSource: 'file'
+        file: '$(Pipeline.Workspace)/s/k8s-manifests'
+        failNoOp: true

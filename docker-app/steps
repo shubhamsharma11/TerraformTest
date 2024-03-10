@@ -1,0 +1,5 @@
+1. Create the repo and push to azure repo
+2. Create azure pipeline build
+3. Create an linux agent ( bcz the azure pipeline agent needs registration)
+4. install docker and add the required user part of the root group.
+5. Add the script task to the pipeline.
